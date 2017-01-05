@@ -147,34 +147,18 @@ int Array6()
 //int Array7()
 //{
 //
-//	int Array2D[29][5];
-//	for (int i = 0; i < 29; i++)
+//	int days[29][5];
+//	int tempa[1];
+//	int tempb[1];
+//	for (int r = 0; r < 29; r++)
 //	{
-//		for (int j = 0; j < 5; j++)
-//		{
-//			Array2D[i][j] = i;
-//		}
-//	}
-//
-//	int suma;
-//	for (int i = 0; i < 29; i++)
-//	{
-//		suma = 0;
-//
+//	
 //
 //	}
-//	int sumb;
-//	for (int i = 0; i < 5; i++)
+//	for (int c = 0; c < 5; c++)
 //	{
-//		sumb = 0;
-//
-//
-//
+//	
 //	}
-//
-//	std::cout << suma << std::endl;
-//	std::cout << sumb << std::endl;
-//
 //	system("pause");
 //	return 0;
 //}

@@ -92,19 +92,6 @@ float smallerFloat()
 		system("pause");
 	}
 
-	else if (inputb > inputa)
-	{
-		if (inputa < inputc)
-		{
-			std::cout << "The smallest number is " << inputa << std::endl;
-			return inputa;
-		}
-		else if (inputc < inputa)
-		{
-			std::cout << "The smallest number is " << inputc << std::endl;
-			return inputc;
-		}
-	}
 	system("pause");
 }
 

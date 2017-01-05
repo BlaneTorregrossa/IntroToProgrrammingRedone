@@ -11,6 +11,10 @@ int Exec1()
 		x = 100;
 		return 0;
 	}
+	else
+	{
+		return 0;
+	}
 
 }
 
@@ -22,7 +26,7 @@ int Exec2()
 	int a;
 	int b;
 
-	std::cout << "Type two numbers" << std::endl;
+	std::cout << "Type two numbers (No decimals please) " << std::endl;
 	std::cin >> a >> b;
 	system("cls");
 
@@ -143,7 +147,7 @@ int Exec4()
 //Description: A ternary operator made from an if statement
 int Exec5()
 {
-	int x = 5;
+	int x = 10;
 	int y;
 
 	y = (x == 0) ? 0 : 10 / x;
@@ -200,11 +204,11 @@ int Exec7()
 	int may = 31;
 	int jun = 30;
 	int jul = 31;
-	int aug = 30;
-	int sep = 31;
+	int aug = 31;
+	int sep = 30;
 	int oct = 31;
-	int nov = 31;
-	int dec = 30;
+	int nov = 30;
+	int dec = 31;
 	int monthOfTheYear;
 
 	std::cout << "Type in 1-12 to select a month and view the days it has." << std::endl << "Ex. (5 is May)" << std::endl;
@@ -264,16 +268,16 @@ int numPos = 35, numNeg = -55;
 char frstChar = 'J', scndChar = 'O';
 double frstPrice = 5.60;
 
-a.) true
-b.) false
-c.) false
-d.)	false
-e.) true
-f.)	false
-g.) false
-h.)	true
-i.) true
-j.)	true
+a.) Valid
+b.) Invalid
+c.) Invalid
+d.)	Invalid
+e.) Valid
+f.)	Invalid
+g.) Invalid
+h.)	Valid
+i.) Valid
+j.)	Valid
 }
 */
 
@@ -289,19 +293,19 @@ j.)	true
 //	bool b = false;
 //
 ////a.) (a || b) || (a && b)
-//  True || False
+//  Valid || Invalid
 
 ////b.) !((!a) && (a)) || (a && b)
-//	False || True
+//	Invalid || Valid
 
 //c.) !((5 || a) || (!b)) && (!(a) && b)
-// False || False
+// Invalid || Invalid
 
 //d.) a || b && a
-// True || False
+// Valid || Invalid
 
 //e.) !a&&b
-//	False
+//	Invalid
 
 //}
 

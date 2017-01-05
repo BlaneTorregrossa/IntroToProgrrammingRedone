@@ -3,15 +3,15 @@
 #include <iostream>
 int Exec1()
 {
-	float a = 2.f / 3.f + 3.f / 5.f; //Sum is 1.26667
-	float b = 2 % 3 + 3 % 5; // Sum is 5
-	float c = 23 % 15 % -2; //there is no remainder by the end so a 0 is displayed
-	float d = 25.f * 1.f / 2.f; // The final result is 12.5
-	float e = 25.f * 1.0f / 2.f; // The final result is 12.5
-	float f = 25.f * (1.f / 2.f); // The final result is 12.5
-	float g = 235.f / 8.f + 7.f;  // The final result is 36.375 
-	float h = 235.f / 8.0f + 7.f; // The final result is 36.375 
-	float i = ((20.f + 1.f) / 2.f - 2.0f) / (23.f + 3.f) * 0.2f; // The final result is 0.0653846
+	float a = 2.f / 3.f + 3.f / 5.f; //Sum is 1.26667 | Valid
+	float b = 2 % 3 + 3 % 5; // Sum is 5 | Valid
+	float c = 23 % 15 % -2; // Displays 0 | Invalid
+	float d = 25.f * 1.f / 2.f; // The final result is 12.5 | Valid
+	float e = 25.f * 1.0f / 2.f; // The final result is 12.5 | Valid
+	float f = 25.f * (1.f / 2.f); // The final result is 12.5 | Valid
+	float g = 235.f / 8.f + 7.f;  // The final result is 36.375 | Valid
+	float h = 235.f / 8.0f + 7.f; // The final result is 36.375 | Valid
+	float i = ((20.f + 1.f) / 2.f - 2.0f) / (23.f + 3.f) * 0.2f; // The final result is 0.0653846 | Valid
 
 	{
 		// Prints out the results of the math from floats a through i to the console
@@ -26,7 +26,7 @@ Exercise 2
 Selection off of varible names based on prompts given
 
 a.) The average height of students in your class
-Answer: int avgStudentHeight
+Answer: int avgStudentHgt
 
 b.) The tax rate for incomes over $65000
 Answer: int taxRateHighIncome
@@ -35,7 +35,7 @@ c.) The tax rate for income below $5000
 Answer: int taxRateLowIncome
 
 d.) The total cost of all the games on your Steam library
-Answer: int personalSteamLibrayValue
+Answer: int steamLibrayValue
 */
 
 /*
@@ -45,7 +45,7 @@ Matching data types with given values
 a.) 121
 Answer: int / interger
 b.) 9.4
-Answer: float / floating varible
+Answer: float / floating variable
 c.) r
 Answer: char / character
 d.) 100000
@@ -63,9 +63,9 @@ int Exec4()
 	int b = 0;
 	int tmp;
 	// Asks user for two nubers to assign and then prints them to console
-	std::cout << "please give a number for character a (no decimals) " << std::endl;
+	std::cout << "please give a number for interger a (no decimals) " << std::endl;
 	std::cin >> a;
-	std::cout << "please give a number for character b (no decimals) " << std::endl;
+	std::cout << "please give a number for interger b (no decimals) " << std::endl;
 	std::cin >> b;
 	std::cout << "a" << std::endl << a << std::endl << "b" << std::endl << b;
 	std::cin.get();
@@ -98,12 +98,12 @@ int Exec5()
 	std::cout << "i: " << i << "/nch: " << ch << "/nf: " << f << std::endl;
 	system("pause");
 
-	/*a.) i = 1 ch = A f = 45
-	b.) i = 1 ch = A f = 45
-	c.) i = 1 ch = 9 f = 45
-	d.) i = 1 ch = 9 f = 45
-	e.) i = 0 ch = a f = 0
-	f.) i = 1 ch = B f = 0*/
+	/*a.) i: 1/nch: A/nf: 45
+	b.) i: 1/nch: A/nf: 45
+	c.) i: 1/nch: 9/nf: 45
+	d.) i: 1/nch: 9/nf: 45
+	e.) i: 0/nch: a/nf: 0
+	f.) i: 1/nch: B/nf: 0*/
 
 	return 0;
 }
@@ -125,7 +125,7 @@ int Exec6()
 		std::cout << "Please give 5 seperate numbers" << std::endl;
 		std::cin >> a >> b >> c >> d >> e;
 		avg = (a + b + c + d + e) / 5;
-		std::cout << "The average (rounded) is " << avg << std::endl;
+		std::cout << "The average (rounded down) is " << avg << std::endl;
 		system("pause");
 		return 0;
 	}
@@ -143,6 +143,12 @@ int Exec7()
 	std::cout << "Please insert either the capital or lowercase letters of (a-z) to get the letter in the middle." << std::endl;;
 	std::cin >> a >> b;
 	inbetween = (a + b) / 2;
+	if (inbetween < 65 || inbetween < 96 && inbetween > 91)
+	{
+		std::cout << "You made a mistake. Perhaps you used a lowercase and capitial letter together?";
+		system("pause");
+		return 0;
+	}
 	std::cout << "The middle letter is... " << inbetween << std::endl;
 	system("pause");
 	return 0;
