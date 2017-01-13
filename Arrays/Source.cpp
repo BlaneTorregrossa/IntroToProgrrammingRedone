@@ -36,12 +36,13 @@ int Array2()
 
 void Array3()
 {
-	int data[10]{ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+	int data[10];
 
-	for (int i : data)
+	for (int i = 0; i < 10; i++)
 	{
-		std::cout << i << std::endl;
+		data[i] = i;
 	}
+
 	system("pause");
 }
 
@@ -143,45 +144,113 @@ int Array6()
 
 
 //Arrays 7
-//
-//int Array7()
-//{
-//
-//	int days[29][5];
-//	int tempa[1];
-//	int tempb[1];
-//	for (int r = 0; r < 29; r++)
-//	{
-//	
-//
-//	}
-//	for (int c = 0; c < 5; c++)
-//	{
-//	
-//	}
-//	system("pause");
-//	return 0;
-//}
+
+int Array7()
+{
+
+	int days[29][5];
+	//int tempa[1];
+	//int tempb[1];
+	int rowCount = 0;
+	int colCount = 0;
+	int rowSum = 0;
+	int colSum = 0;
+	//int tempa;
+	//int tempb;
+
+	for (int i = 0; i < 29; i++)	// for loop to determine row of array
+	{
+		for (int j = 0; j < 5; j++) // for loop to determine column of array
+		{
+			days[i][j] = rowCount; // places intergers in the array
+			rowSum = days[i][j] + rowSum;
+			rowCount++; // increases numbers by one
+
+		}
+	}
+
+	for (int i = 0; i < 5; i++)	// for loop to determine row of array
+	{
+		for (int j = 0; j < 29; j++) // for loop to determine column of array
+		{
+			days[i][j] = colCount; // places intergers in the array
+			colSum = days[i][j] + colSum;
+			colCount++; // increases numbers by one
+
+		}
+	}
+
+
+	system("pause");
+	return 0;
+}
 
 
 //Arrays 8 
 
-//int Array8()
-//{
-//
-//
-//	return 0;
-//}
+int Array8()
+{
 
 
-//Arrays 9
+	int health[] = { 100, 100, 100, 100, 100 };
+	int input;
+	int attackCounter = 0;
 
-//int Array9()
-//{
-//
-//
-//	return 0;
-//}
+	//std::cout << "Please select a player to take damage using keys 0 to 4." << std::endl;
+	//std::cin >> input;
+
+	for (int i = 0; i < 5;)
+	{
+		std::cout << "Please select a player to take damage using keys 0 to 4." << std::endl;
+		std::cin >> input;
+		i++;
+
+		if (input > 4 || input < 0)
+		{
+			std::cout << "No Valid Input" << std::endl;
+			i--;
+		}
+
+		else if (health[input] <= 0)
+		{
+
+			std::cout << "Input No longer Valid" << std::endl;
+			i--;
+		}
+
+		else
+		{
+			health[input] = health[input] - 40;
+			attackCounter++;
+			if (health[input] == -20)
+			{
+				health[input] == 0;
+				std::cout << "20 damage was dealt to your target " << std::endl;
+			}
+			else
+			{
+				std::cout << "40 damage was dealt to your target " << std::endl;
+			}
+		}
+
+		if (attackCounter == 5)
+		{
+			std::cout << "Player HP is: " << health[0] << " HP" << std::endl;
+			std::cout << "Player HP is: " << health[1] << " HP" << std::endl;
+			std::cout << "Player HP is: " << health[2] << " HP" << std::endl;
+			std::cout << "Player HP is: " << health[3] << " HP" << std::endl;
+			std::cout << "Player HP is: " << health[4] << " HP" << std::endl;
+		}
+
+	}
+
+
+	return 0;
+
+}
+
+
+
 
 int main()
 {
@@ -190,7 +259,6 @@ int main()
 	Array4();
 	Array5();
 	Array6();
-	//Array7();
-	//Array8();
-	//Array9();
+	Array7();
+	Array8();
 }

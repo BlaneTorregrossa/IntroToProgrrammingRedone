@@ -179,6 +179,8 @@ int SumTo(int N)
 	int i;
 	int temp;
 	int sum = 0;
+
+
 	for (i = 0; i <= N; i++)
 	{
 		temp = i;
@@ -200,6 +202,21 @@ int SumTo(int N)
 //Functions 8
 
 
+int SumArray(int Array[], int size)
+{
+	int sum = 0;
+	//int temp;
+
+	for (int i = 0; i < size;)
+	{
+		sum = sum + Array[i];
+		i++;
+	}
+
+	return sum;
+}
+
+
 //int main()
 //{
 //	int integer_array[5] = { 7, 3, 2, 4, 9 };
@@ -209,6 +226,24 @@ int SumTo(int N)
 
 
 //Functions 9
+
+
+int MinInArray(int Array[], int size)
+{
+	int min = 0;
+
+	for (int i = 0; i < size; i++)
+	{
+
+		if (min > Array[i])
+		{
+			min = Array[i];
+		}
+
+	}
+
+	return  min;
+}
 
 
 //int main()
@@ -222,28 +257,135 @@ int SumTo(int N)
 //Functions 10
 
 
+int MultiplyByIndex(int input_array[], int output_array[], int size)
+
+{
+	int i;
+
+
+	for (i = 0; i < size; i++)
+	{
+		output_array[i] = input_array[i] * i;
+	}
+
+	return 0;
+}
+
 //int main()
 //{
-//	int integer_array[7] = { 10, 15, 7, 4, 13, 19, 8 };
+//	int input_array[7] = { 10, 15, 7, 4, 13, 19, 8 };
 //	int output_array[7] = {};
-//	MultiplyByIndex(integer_array, output_array, 7);
+//	MultiplyByIndex(input_array, output_array, 7);
 //	//output_array should be {0, 15, 14, 12, 52, 95, 48};
 //	return 0;
 //}
 
+
 //Functions 11
+
+int Func11(int input_array_a[], int input_array_b[], int size, int output[])
+{
+	int value = 0;
+
+	for (int i = 0; i < size; i++)
+	{
+		int sum = input_array_a[i] + input_array_b[i];
+		output[i] = sum;
+	}
+
+	return 0;
+}
+
+//int main()
+//{
+//	int input_array_a[7] = { 10, 15, 7, 4, 13, 19, 8 };
+//	int input_array_b[7] = { 2, 5, 3, 22, 8, 14, 1 };
+//	int output[7];
+//	Func11(input_array_a, input_array_b, 7, output);
+//}
 
 
 //Functions 12
 
+int Func12(int array_input[], int size)
+
+{
+	int sum = 0;
+
+	for (int i = 0; i < 2; i++)
+	{
+		sum = sum + array_input[i];
+	}
+	
+	return 0;
+}
+
+//int main()
+//{
+//	int array_input[4] = { 3, 2, 5, 7 };	
+//	Func12(array_input, 4);
+//}
+
+
 
 //Functions 13
+
+int Func13(int search_array[], int size, int search)
+{
+
+	for (int i = 0; i < size; i++)
+	{
+		if (search == search_array[i])
+		{
+			return i;
+		}
+		else
+		{
+			std::cout << "No number was found." << std::endl;
+			return 0;
+		}
+	}
+
+}
+
+
+//int main()
+//{
+//	int search_array[7] = { 1, 2, 3, 4, 5, 6, 7 };
+//	Func13(search_array, 7, 3);
+//}
 
 
 //Functions 14
 
+int Func14()
+{
+
+	
+
+}
+
+
+//int main()
+//{
+//	Func14();
+//}
+
+
 
 //Functions 15
+
+int func15()
+{
+	int x;
+	int y;
+	int xy;
+	int sum;
+
+
+
+}
+
 
 
 //Functions 16
@@ -251,9 +393,12 @@ int SumTo(int N)
 
 //Functions 17
 
-int main()
-{
-	smallerFloat();
-	Half(42);
-	CoinToss();
-}
+
+
+
+//int main()
+//{
+//	smallerFloat();
+//	Half(42);
+//	CoinToss();
+//}

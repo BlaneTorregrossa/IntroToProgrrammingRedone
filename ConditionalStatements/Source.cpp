@@ -53,63 +53,62 @@ int Exec2()
 //If the numbers are negative it does the opposite. If the sum equals zero it displays the numbers in the order they were entered.
 int Exec3()
 {
-	int sum;
-	int resulta;
-	int resultb;
-	int resultc;
-	int resultd;
-	int resulte;
-	int tmp;
-	std::cout << "Please give us a small number..." << std::endl;
-	std::cin >> resulta;
-	std::cout << "Please give us a slightly bigger number..." << std::endl;
-	std::cin >> resultb;
-	if (resulta > resultb)
+	int input[4];
+	int temp;
+
+	std::cout << "Please give 5 numbers" << std::endl;
+	for (int i = 0; i < 5; i++)
 	{
-		std::cout << "Number is to big!";
-		system("pause");
-		return 0;
+		std::cin >> input[i];
 	}
-	std::cout << "Please give us an even bigger number!" << std::endl;
-	std::cin >> resultc;
-	if (resultb > resultc)
-	{
-		std::cout << "Number is to big!";
-		system("pause");
-		return 0;
-	}
-	std::cout << "Please give us a huge number!" << std::endl;
-	std::cin >> resultd;
-	if (resultc > resultd)
-	{
-		std::cout << "Number is to big!";
-		system("pause");
-		return 0;
-	}
-	std::cout << "Plese give us one last number that is super big!!!" << std::endl;
-	std::cin >> resulte;
-	if (resultd > resulte)
-	{
-		std::cout << "Number is to big!";
-		system("pause");
-		return 0;
-	}
-	system("cls");
-	sum = resulta + resultb + resultc + resultd + resulte;
-	if (sum < 0)
-	{
-		std::cout << resulte << std::endl << resultd << std::endl << resultc << std::endl << resultb << std::endl << resulta << std::endl;
-	}
+
+	int inputa = input[0]; int inputb = input[1]; int inputc = input[2]; int inputd = input[3]; int inpute = input[4];
+	int sum = inputa + inputb + inputc + inputd + inpute;
+
 	if (sum > 0)
 	{
-		std::cout << resulta << std::endl << resultb << std::endl << resultc << std::endl << resultd << std::endl << resulte << std::endl;
+		for (int i = 0; i < 5; i++)
+		{
+			for (int j = 0; j < 4; j++)
+			{
+				if (input[i] < input[j])
+				{
+					temp = input[i];
+					input[i] = input[j];
+					input[j] = temp;
+				}
+			}
+		}
+		std::cout << input[0] << std::endl << input[1] << std::endl << input[2] << std::endl << input[3] << std::endl << input[4] << std::endl;
+		return 0;
 	}
-	if (sum == 0)
+
+	else if (sum < 0)
 	{
-		std::cout << resulta << std::endl << resultb << std::endl << resultc << std::endl << resultd << std::endl << resulte << std::endl;
+		for (int i = 0; i < 5; i++)
+		{
+			for (int j = 0; j < 4; j++)
+			{
+				if (input[i] < input[j])
+				{
+					temp = input[i];
+					input[i] = input[j];
+					input[j] = temp;
+				}
+			}
+		}
+		std::cout << input[4] << std::endl << input[3] << std::endl << input[2] << std::endl << input[1] << std::endl << input[0] << std::endl;
+		return 0;
 	}
-	system("pause");
-	return 0;
+
+	else
+	{
+
+		std::cout << input[0] << std::endl << input[1] << std::endl << input[2] << std::endl << input[3] << std::endl << input[4] << std::endl;
+		return 0;
+	}
+
+	
 }
 
 
@@ -163,32 +162,34 @@ int Exec6()
 	int numa;
 	int numb;
 	int numOperation;
-	std::cout << "Please give two numbers.";
-	std::cin >> numa >> numb;
-	std::cout << "Pleae give us one of the following using 1-5(+, -, *, /, %).";
-	std::cin >> numOperation;
+	int numsAns = 0;
+	std::cout << "Please give a basic math operation W/ 2 numbers (Note: Operators are represented by numbers 1 - 5 (Ex. (2 3 2) is (2 * 2)).";
+	std::cin >> numa >> numOperation >> numb;
+	
 
 	switch (numOperation)
 	{
 	case 1:
-		std::cout << numa + numb << std::endl;
+		numsAns = numa + numb;
 		break;
 	case 2:
-		std::cout << numa - numb << std::endl;
+		numsAns = numa - numb;
 		break;
 	case 3:
-		std::cout << numa * numb << std::endl;
+		numsAns = numa * numb;
 		break;
 	case 4:
-		std::cout << numa / numb << std::endl;
+		numsAns = numa / numb;
 		break;
 	case 5:
-		std::cout << numa % numb << std::endl;
+		numsAns = numa % numb;
 		break;
 	default:
 		std::cout << "Mistakes were made to bring you these words." << std::endl;
 		break;
 	}
+
+	std::cout << "Answer: " << numsAns;
 	system("pause");
 	return 0;
 }
