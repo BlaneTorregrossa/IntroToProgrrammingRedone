@@ -6,7 +6,7 @@
 
 //#include <iostream>
 //void PrintInteger(int variable) {
-//	std::cout << variable << std::endl;
+//	std::std::cout << variable << std::endl;
 //}
 //int main()
 //{
@@ -101,7 +101,7 @@ float smallerFloat()
 float Half(float number)
 {
 	int i = number;
-	return i/2;
+	return i / 2;
 	system("pause");
 }
 
@@ -119,7 +119,7 @@ int CoinToss()
 	{
 		temp = rand();
 
-		
+
 
 		if (temp % 2 == 0) // While loop makes answer repeat endlessly
 		{
@@ -230,7 +230,7 @@ int SumArray(int Array[], int size)
 
 int MinInArray(int Array[], int size)
 {
-	int min = 0;
+	int min = Array[0];
 
 	for (int i = 0; i < size; i++)
 	{
@@ -312,18 +312,18 @@ int Func12(int array_input[], int size)
 {
 	int sum = 0;
 
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		sum = sum + array_input[i];
 	}
-	
-	return 0;
+
+	return sum;
 }
 
 //int main()
 //{
-//	int array_input[4] = { 3, 2, 5, 7 };	
-//	Func12(array_input, 4);
+//	int array[4] = { 3, 2, 5, 7 };	
+//	Func12(array, 4);
 //}
 
 
@@ -339,66 +339,356 @@ int Func13(int search_array[], int size, int search)
 		{
 			return i;
 		}
-		else
+		else if (i > 7)
 		{
 			std::cout << "No number was found." << std::endl;
-			return 0;
 		}
 	}
 
 }
 
-
+//
 //int main()
 //{
-//	int search_array[7] = { 1, 2, 3, 4, 5, 6, 7 };
-//	Func13(search_array, 7, 3);
+//	int searchArray[] = { 4, 2, 1, 3, 4 };
 //}
 
 
 //Functions 14
 
-int Func14()
+int Split(int inputa[], int size, int outputa[], int outputb[])
 {
 
-	
+
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		//std::cin input[];		//I don't know how to get an array in the parameters to accept inputs from user via cin
+
+
+		if (inputa[i] >= 0)
+		{
+			outputa[count] = inputa[i];
+			outputb[count] = 0;
+			count++;
+
+		}
+
+
+		if (inputa[i] < 0)
+		{
+			outputb[count] = inputa[i];
+			outputa[count] = 0;
+			count++;
+
+		}
+
+
+	}
+
+	return 0;
 
 }
 
-
 //int main()
-//{
-//	Func14();
+//{	
+//	int inputa[7] = { 1, -2, 3, 4, -5, 73, -10 };
+//	int outputa[7];
+//	int outputb[7];
+//	Split(inputa, 7, outputa, outputb);
 //}
 
 
 
 //Functions 15
 
-int func15()
+int func15(int x, int y, int start)
 {
-	int x;
-	int y;
-	int xy;
-	int sum;
+	int sum = start;
+	
+	for (int i = 0; i < y; i++)
+	{
+		sum = x * sum;
+	}
 
-
-
+	return sum;
 }
 
+
+//int main()
+//{
+//	func15(5, 5, 1);
+//}
 
 
 //Functions 16
 
 
-//Functions 17
-
-
+int func16(int array[], int size)
+{
+	int loop = 1;
+	int i;
+	for (i = 0; i < size; i++)
+	{
+		if (array[i] == array[i + 1])
+		{
+			loop++;
+		}
+		else
+		{
+			std::cout << loop << ", " << array[i] << "'s " << std::endl;
+			loop = 1;
+		}
+	}
+	std::cout << loop << ", " << array[i] << "'s " << std::endl;
+	/*if (array[i] == -858993460)
+	{
+		array[i] = "blank"
+	}*/
+	return 1;
+}
 
 
 //int main()
 //{
-//	smallerFloat();
-//	Half(42);
-//	CoinToss();
+//		int looksayArray[10] = { 2, 2, 3, 4, 3, 22, 2, -2, 0, 10 };
+//		func16(looksayArray, 9);
 //}
+
+
+//Functions 17
+
+
+int func17()
+
+{
+
+	int Player_Select = 0;
+	int Opponent_Select = 0;
+
+	std::cout << "Input 1 for Rock, Input 2 for Paper, Input 3 for Scissors" << std::endl;
+
+
+	bool win = true;
+	while (win == true)
+	{
+		std::cin >> Player_Select;
+
+		Opponent_Select = rand() % 3 + 1;
+		switch (Player_Select)
+
+		{
+		case 1:
+		{
+			switch (Opponent_Select)
+			{
+			case 1:			
+
+				std::cout << "Computer used Rock" << std::endl;
+				std::cout << "Tie" << std::endl;
+
+			case 2:
+
+				std::cout << "Computer used Paper" << std::endl;
+				std::cout << "You Lost" << std::endl;
+				break;
+
+			case 3:
+
+				win = false;
+				std::cout << "Computer used Scisors" << std::endl;
+				std::cout << "You Won" << std::endl;
+				break;
+				
+			}
+		}
+		break;
+
+		case 2:
+		{
+			switch (Opponent_Select)
+			{
+			case 1:
+
+				win = false;
+				std::cout << "Computer used Rock" << std::endl;
+				std::cout << "You Won" << std::endl;
+				break;
+
+			case 2:
+
+				std::cout << "Computer used Paper" << std::endl;
+				std::cout << "Tie" << std::endl;
+
+			case 3:
+
+				std::cout << "Computer used Scisors" << std::endl;
+				std::cout << "You Lost" << std::endl;
+				break;
+				
+			}
+		}
+		break;
+
+		case 3:
+		{
+			switch (Opponent_Select)
+			{
+			case 1:
+
+				std::cout << "Computer used Rock" << std::endl;
+				std::cout << "You Lost" << std::endl;
+				break;
+
+			case 2:
+
+				win = false;
+				std::cout << "Computer used Paper" << std::endl;
+				std::cout << "You won" << std::endl;
+				break;
+
+			case 3:
+				std::cout << "Computer used Scisors" << std::endl;
+				std::cout << "Tie" << std::endl;
+				
+			}
+		}
+		break;
+
+		}
+	}
+	return 1;
+}
+
+
+
+////Does not work
+//void func17(int Player_Select, int Opponent_Select)
+//
+//{
+//	std::cout << "Input 1 for Rock,Input 2 for Paper, Input 3 for Scissors" << std::endl;
+//
+//	int choice = 0;
+//	int o_choice = 0;
+//
+//	bool Picking = true;
+//	while (Picking == true)
+//	{
+//		std::cin >> Player_Select;
+//
+//		Opponent_Select = rand() % 3 + 1;
+//		switch (Player_Select)
+//
+//		{
+//		case 1:
+//		{
+//
+//
+//			choice = 1;
+//
+//			break;
+//		}
+//
+//
+//
+//		case 2:
+//		{
+//
+//
+//			choice = 2;
+//
+//			break;
+//		}
+//
+//		case 3:
+//		{
+//
+//
+//			choice = 3;
+//
+//			break;
+//		}
+//
+//		default:
+//		{
+//			std::cout << "wrong input" << std::endl;
+//		}
+//
+//		}
+//		switch (Opponent_Select)
+//		{
+//		case 1:
+//		{
+//			{
+//				o_choice = 1;
+//			}
+//			break;
+//		}
+//		case 2:
+//		{
+//
+//			o_choice = 2;
+//
+//			break;
+//		}
+//		case 3:
+//		{
+//
+//			o_choice = 3;
+//
+//			break;
+//		}
+//
+//		if (choice == 1 && o_choice == 3)
+//		{
+//			Picking == false;
+//			std::cout << "You won!" << std::endl;
+//		}
+//		if (choice == 1 && o_choice == 2)
+//		{
+//			std::cout << "You lost!" << std::endl;
+//		}
+//		if (choice == 1 && o_choice == 1)
+//		{
+//			std::cout << "Tie" << std::endl;
+//		}
+//
+//		if (choice == 2 && o_choice == 1)
+//		{
+//			Picking == false;
+//			std::cout << "You won!" << std::endl;
+//		}
+//		if (choice == 2 && o_choice == 3)
+//		{
+//			std::cout << "You lost!" << std::endl;
+//		}
+//		if (choice == 2 && o_choice == 2)
+//		{
+//			std::cout << "Tie" << std::endl;
+//		}
+//
+//		if (choice == 3 && o_choice == 2)
+//		{
+//			Picking == false;
+//			std::cout << "You won!" << std::endl;
+//		}
+//		if (choice == 3 && o_choice == 1)
+//		{
+//			std::cout << "You lost!" << std::endl;
+//		}
+//		if (choice == 3 && o_choice == 3)
+//		{
+//			std::cout << "Tie" << std::endl;
+//		}
+//
+//		}
+//	}
+//}
+
+int main()
+{
+	smallerFloat();
+	Half(42);
+	CoinToss();
+	func17();
+}

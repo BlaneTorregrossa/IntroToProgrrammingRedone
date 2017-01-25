@@ -38,9 +38,9 @@ void Array3()
 {
 	int data[10];
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 10; i > 0; i--)
 	{
-		data[i] = i;
+		data[i-1] = i;
 	}
 
 	system("pause");
